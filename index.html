@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Númerologia do nome - Tabela pitagórica"
+    />
+    <meta
+      name="keywords"
+      content="Númerologia, pitagórica, pitágoras, Nome, nomes, numerology"
+    />
+    <title>Númerologia do nome - theKarma.tech</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section id="app" class="section">
+      <div class="container" v-cloak>
+        <h1 class="title">
+          Bem-vindo!
+        </h1>
+        <p class="subtitle">
+          Calcule seu nome ou da empresa usando a tabela pitagórica.
+        </p>
+        <div class="field">
+          <label class="label">Nome: </label>
+          <div class="control">
+            <input
+              v-model.trim="name"
+              @change="calcule"
+              @keyUp="calcule"
+              class="input"
+              maxlength="100"
+              type="text"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div v-if="ret">
+          <h1>NÚMERO DE EXPRESSÃO: {{ resultExpression }}</h1>
+          <h2>{{ resultExpressionRaw }}</h2>
+          <h1>NÚMERO DE MOTIVAÇÃO: {{ resultMotivation }}</h1>
+          <h2>{{ resultMotivationRaw }}</h2>
+          <h1>NÚMERO DE IMPRESSÃO: {{ resultImpression }}</h1>
+          <h2>{{ resultImpressionRaw }}</h2>
+        </div>
+        <address>
+          Coded by Dg <a href="http://thekarma.tech">thekarma.tech</a> 2019
+        </address>
+      </div>
+    </section>
+
+    <canvas id="canv" width="460" height="460"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
